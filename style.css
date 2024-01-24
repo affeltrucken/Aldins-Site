@@ -5,3 +5,88 @@
   @supports (font-variation-settings: normal) {
     :root { font-family: InterVariable, sans-serif; }
   }
+
+.accent {
+  color: rgb(2, 107, 173)
+}
+
+.black {
+  color: black
+}
+main {
+  margin-left: 25%;
+  margin-right: 25%
+}
+
+header {
+    top: 0;
+    width: 100%;
+}
+
+nav {
+  text-align: center;
+  width: auto;
+  padding-right: 1.5rem;
+}
+
+.inline-block {
+  display: inline-block;
+
+}
+
+h1 {
+  font-size: 5rem;
+  margin: 1rem;
+  margin-left: 0; 
+}
+
+h2 {
+  font-size: 3rem;
+  display: inline-block;
+}
+
+h3 {
+  font-size: 2rem
+}
+
+.fade-in {
+  animation: backwards fade-in 1.5s;
+}
+
+.delay-1 {
+  animation-delay: 0s
+}
+
+.delay-2 {
+  animation-delay: 1s
+}
+
+.delay-3 {
+  animation-delay: 2s
+}
+
+.delay-4 {
+  animation-delay: 3s;
+}
+
+.gallery {
+  display: flex;
+  width: auto;
+}
+
+.gallery img {
+  margin: 0.3rem;
+  flex: 1;
+  width: 100%;
+  height: auto;
+}
+
+.invisible-animated {
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fade-in {
+  from {opacity: 0}
+  to {opacity: 1}
+}
