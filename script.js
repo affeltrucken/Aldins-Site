@@ -6,10 +6,13 @@ document.addEventListener("DOMContentLoaded", function() {
             var elementTop = fadeIn.getBoundingClientRect().top;
             var viewportHeight = window.innerHeight;
 
-            // Check if the element is in viewport and if it doesn't already have the 'fade-in' class
             if (elementTop < viewportHeight - 50 && !fadeIn.classList.contains("fade-in")) {
                 fadeIn.classList.add("fade-in");
             }
         });
     });
+});
+
+document.getElementById('darkMode').addEventListener('click', function() {
+    document.getElementById('mainContainer').classList.toggle('inverted');
 });
