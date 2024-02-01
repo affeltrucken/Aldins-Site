@@ -1,18 +1,15 @@
-document.addEventListener("DOMContentLoaded", function() {
-    var fadeInElements = document.getElementsByClassName("invisible-animated");
-
-    window.addEventListener('scroll', function() {
-        Array.from(fadeInElements).forEach(function(fadeIn) {
-            var elementTop = fadeIn.getBoundingClientRect().top;
-            var viewportHeight = window.innerHeight;
-
-            if (elementTop < viewportHeight - 50 && !fadeIn.classList.contains("fade-in")) {
-                fadeIn.classList.add("fade-in");
-            }
-        });
-    });
+document.getElementById('darkMode').addEventListener('click', function() {
+    var mainContainer = document.getElementById('mainContainer');
+    if (mainContainer.classList.contains('inverted')) {
+        // Dark mode is currently enabled, so we apply the reverse animation
+        mainContainer.style.animation = 'reverse-invert 1s forwards';
+    } else {
+        // Dark mode is not enabled, apply the normal animation
+        mainContainer.style.animation = 'invert 1s forwards';
+    }
+    mainContainer.classList.toggle('inverted');
 });
 
-document.getElementById('darkMode').addEventListener('click', function() {
-    document.getElementById('mainContainer').classList.toggle('inverted');
+document.getElementById('mainContainer').addEventListener('animationend', function() {
+    this.style.animation = '';
 });
