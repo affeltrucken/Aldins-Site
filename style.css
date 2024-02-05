@@ -110,6 +110,51 @@ a {
   width: 2rem;
 }
 
+#repo-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* This will space out the items evenly */
+}
+
+
+.repo {
+  font-size: 2rem;
+  font-weight: 500;
+
+  width: calc(33% - 10px); /* Subtracting margin from the width to fit three items in a row */
+  
+  margin-bottom: 10px; /* Spacing between rows */
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  border-radius: 2rem;
+  
+  background-color: #ffffff;
+}
+
+.repo-description {
+  font-size: 1rem; /* Adjust the font size as needed */
+  color: #434343; /* A lighter text color for the description */
+  margin-top: 5px; /* Space between the title and the description */
+}
+
+.content {
+  width: 100%; /* Take up all horizontal space */
+}
+
+.repo-title {
+  font-size: 3rem;;
+  font-weight: 700;
+  display: block; /* Keeps block level properties for overflow handling */
+  color:rgb(0, 0, 0);
+
+  padding-bottom: 2rem;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%; /* Ensure it doesn't overflow the .content container */
+}
+
 @keyframes invert {
   from {filter: invert(0%)}
   to {filter: invert(100%)}
