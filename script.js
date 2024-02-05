@@ -14,6 +14,7 @@ document.getElementById('mainContainer').addEventListener('animationend', functi
     this.style.animation = '';
 });
 
+await new Promise(r => setTimeout(r, 2000));
 fetch('https://api.github.com/users/affeltrucken/repos')
     .then(response => response.json())
     .then(data => {
