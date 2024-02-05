@@ -46,5 +46,6 @@ fetch('https://api.github.com/users/affeltrucken/repos')
         // Append the .content wrapper to the .repo container, then append it to the main container
         repoDiv.appendChild(contentDiv);
         container.appendChild(repoDiv);
+    });
     })
     .catch(error => console.error('Error:', error));
