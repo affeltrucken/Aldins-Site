@@ -6,13 +6,6 @@
     :root { font-family: InterVariable, sans-serif; }
   }
 
-.accent {
-  color: rgb(0, 127, 207)
-}
-
-.black {
-  color: black
-}
 main {
   margin-left: 25%;
   margin-right: 25%
@@ -29,15 +22,40 @@ nav {
   padding-right: 1.5rem;
 }
 
-.inline-block {
-  display: inline-block;
+a {
+  color: black;
+  text-decoration: none;
+}
 
+svg {
+  color: black;
+  background-color: white;
+  stroke: 1px black;
 }
 
 h1 {
   font-size: 5rem;
   margin: 1rem;
   margin-left: 0; 
+}
+
+.spacer {
+  padding: 3rem;
+}
+.big {
+  font-size: 5rem;
+}
+
+.medium {
+  font-size: 3rem
+}
+
+.small {
+  font-size: 2rem;
+}
+
+.smallest {
+  font-size: 1rem;
 }
 
 h2 {
@@ -69,6 +87,20 @@ h3 {
   animation-delay: 3s;
 }
 
+.inline-block {
+  display: inline-block;
+
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.accent {
+  color: rgb(0, 127, 207)
+}
+
+/**
 .gallery {
   display: flex;
   width: auto;
@@ -79,17 +111,7 @@ h3 {
   flex: 1;
   width: 100%;
   height: auto;
-}
-
-.invisible-animated {
-  opacity: 0;
-  animation-fill-mode: forwards;
-}
-
-a {
-  color: black;
-  text-decoration: none;
-}
+}**/
 
 .inverted {
   animation: invert 1s forwards;
@@ -106,45 +128,22 @@ a {
   animation: invert 1s forwards;
 }
 
-#darkMode {
-  width: 2rem;
-}
-
-#repo-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between; /* This will space out the items evenly */
-}
-
-
 .repo {
-  font-size: 2rem;
-  font-weight: 500;
-
-  width: calc(33% - 10px); /* Subtracting margin from the width to fit three items in a row */
+  width: calc(33% - 10px);
   
-  margin-bottom: 10px; /* Spacing between rows */
+  margin-bottom: 10px;
+  
   padding-bottom: 1rem;
   padding-top: 1rem;
+
   border-radius: 2rem;
-  
-  background-color: #ffffff;
-}
-
-.repo-description {
-  font-size: 1rem; /* Adjust the font size as needed */
-  color: #434343; /* A lighter text color for the description */
-  margin-top: 5px; /* Space between the title and the description */
-}
-
-.content {
-  width: 100%; /* Take up all horizontal space */
 }
 
 .repo-title {
+  background: none;
   font-size: 3rem;;
   font-weight: 700;
-  display: block; /* Keeps block level properties for overflow handling */
+  display: block;
   color:rgb(0, 0, 0);
 
   padding-bottom: 2rem;
@@ -152,8 +151,38 @@ a {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 100%; /* Ensure it doesn't overflow the .content container */
+  max-width: 100%;
 }
+
+.repo-description {
+  font-size: 1rem;
+  color: #434343;
+  margin-top: 5px;
+}
+
+.content {
+  width: 100%;
+}
+
+#info {
+  font-weight: 800;
+  font-size: 2.5rem
+}
+
+#darkMode {
+  width: 2rem;
+}
+
+#repo-container {
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: #fafafa
+}
+
 
 @keyframes invert {
   from {filter: invert(0%)}
@@ -168,15 +197,4 @@ a {
 @keyframes reverse-invert {
   from { filter: invert(100%); }
   to { filter: invert(0%); }
-}
-
-svg {
-  color: black;
-  background-color: white;
-  stroke: 1px black;
-}
-
-#info {
-  font-weight: 800;
-  font-size: 2.5rem
 }

@@ -10,6 +10,22 @@ document.getElementById('darkMode').addEventListener('click', function() {
     mainContainer.classList.toggle('inverted');
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+    var animateMe = document.getElementById("invisible-animated");
+
+    window.addEventListener('scroll', function() {
+        var elementTop = animateMe.getBoundingClientRect().top;
+        var viewportHeight = window.innerHeight;
+
+        if (elementTop < viewportHeight - 100) { // 100 pixels before it reaches the top of the viewport
+            animateMe.classList.add("visible");
+        } else {
+            animateMe.classList.remove("visible");
+        }
+    });
+});
+
+
 document.getElementById('mainContainer').addEventListener('animationend', function() {
     this.style.animation = '';
 });
@@ -49,3 +65,5 @@ fetch('https://api.github.com/users/affeltrucken/repos')
     });
     })
     .catch(error => console.error('Error:', error));
+
+    
