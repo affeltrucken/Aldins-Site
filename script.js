@@ -14,10 +14,9 @@ document.getElementById('mainContainer').addEventListener('animationend', functi
     this.style.animation = '';
 });
 
-
 fetch('https://api.github.com/users/affeltrucken/repos')
-.then(response => response.json())
-.then(data => {
+    .then(response => response.json())
+    .then(data => {
     const container = document.getElementById('repo-container'); // Ensure this ID matches your container's ID in HTML
     data.forEach(repo => {
         // Create the .repo container
@@ -47,6 +46,5 @@ fetch('https://api.github.com/users/affeltrucken/repos')
         // Append the .content wrapper to the .repo container, then append it to the main container
         repoDiv.appendChild(contentDiv);
         container.appendChild(repoDiv);
-    });
-})
-.catch(error => console.error('Error:', error));
+    })
+    .catch(error => console.error('Error:', error));
