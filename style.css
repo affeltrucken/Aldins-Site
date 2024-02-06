@@ -59,6 +59,11 @@ h1 {
   font-size: 1rem;
 }
 
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
 h2 {
   font-size: 3rem;
   display: inline-block;
@@ -68,9 +73,16 @@ h3 {
   font-size: 2rem
 }
 
-.fade-in {
-  animation: backwards fade-in 1.5s;
+.hidden {
+  opacity: 0;
+  visibility: hidden;
 }
+
+.fade-in {
+  animation: fade-in 1.5s;
+  animation-fill-mode: both;
+}
+
 
 .delay-1 {
   animation-delay: 0s
@@ -198,8 +210,8 @@ h3 {
 }
 
 @keyframes fade-in {
-  from {opacity: 0}
-  to {opacity: 1}
+  from {opacity: 0; visibility: hidden;}
+  to {opacity: 1;visibility: visible;}
 }
 
 @keyframes reverse-invert {

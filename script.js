@@ -1,4 +1,23 @@
 
+  
+  function addScrollFadeInAnimation() {
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && entry.intersectionRatio > 0) {
+          // Element is now intersecting, proceed with animation or visibility change
+          entry.target.classList.add('fade-in');
+        } else {
+          // Optionally, handle the case when element is not intersecting or intersectionRatio is not as desired
+          // This could involve resetting elements to a default state if they become non-intersecting after being intersecting
+        }
+      });
+    }, { threshold: 1.0 }); // Adjust threshold as needed
+  
+    document.querySelectorAll('.hidden').forEach(el => {
+      observer.observe(el);
+    });
+  }
+
 function darkModeButton() {
     document.getElementById('darkMode').addEventListener('click', function() {
     var mainContainer = document.getElementById('mainContainer');
@@ -63,10 +82,23 @@ function getGithubBio() {
 }
 
 function main(){
-    darkModeButton()
-    getGithubBio()
-    getGithubRepos()
+    Promise.all(
 
+        [
+            darkModeButton(),
+            getGithubBio(),
+            getGithubRepos()
+            
+        ]
+    ).then(() => {
+        document.querySelectorAll('.hidden').forEach(el => {
+            // Initialize elements as if they are not intersecting
+            // This can be through CSS or directly here if needed
+            // For example, setting opacity to 0 through JavaScript: el.style.opacity = '0';
+          });
+    addScrollFadeInAnimation()
+})
 }
 
 main()
+
