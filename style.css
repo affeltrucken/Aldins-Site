@@ -1,10 +1,17 @@
 :root {
-    font-family: Inter, sans-serif;
-    font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
+  font-family: Inter, sans-serif;
+  font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
+}
+@supports (font-variation-settings: normal) {
+  :root { font-family: InterVariable, sans-serif; }
+}
+
+@media (max-width: 724px) {
+  .repo {
+    width: calc(50% - 10px); /* Adjust the width to fit two items in a row */
+    /* Keep the rest of your styles the same */
   }
-  @supports (font-variation-settings: normal) {
-    :root { font-family: InterVariable, sans-serif; }
-  }
+}
 
 main {
   margin-left: 25%;
@@ -34,15 +41,10 @@ svg {
   stroke: 1px black;
 }
 
-h1 {
-  font-size: 5rem;
-  margin: 1rem;
-  margin-left: 0; 
-}
-
 .spacer {
   padding: 3rem;
 }
+
 .big {
   font-size: 5rem;
 }
@@ -62,15 +64,6 @@ h1 {
 .hidden {
   opacity: 0;
   visibility: hidden;
-}
-
-h2 {
-  font-size: 3rem;
-  display: inline-block;
-}
-
-h3 {
-  font-size: 2rem
 }
 
 .hidden {
@@ -173,6 +166,11 @@ h3 {
   font-size: 1rem;
   color: #434343;
   margin-top: 5px;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
 }
 
 .content {
