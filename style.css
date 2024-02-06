@@ -14,6 +14,7 @@ main {
 header {
     top: 0;
     width: 100%;
+    margin-bottom: 2rem;
 }
 
 nav {
@@ -96,6 +97,10 @@ h3 {
   font-weight: 700;
 }
 
+.thin {
+  font-weight: 500;
+}
+
 .accent {
   color: rgb(0, 127, 207)
 }
@@ -129,7 +134,7 @@ h3 {
 }
 
 .repo {
-  width: calc(33% - 10px);
+  width: calc(33% - 2rem);
   
   margin-bottom: 10px;
   
@@ -141,12 +146,10 @@ h3 {
 
 .repo-title {
   background: none;
-  font-size: 3rem;;
-  font-weight: 700;
   display: block;
   color:rgb(0, 0, 0);
 
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
 
   white-space: nowrap;
   overflow: hidden;
@@ -162,6 +165,11 @@ h3 {
 
 .content {
   width: 100%;
+}
+
+.icon-small {
+  display: inline-block;
+  width: 1.5rem;
 }
 
 #info {

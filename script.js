@@ -1,4 +1,6 @@
-document.getElementById('darkMode').addEventListener('click', function() {
+
+function darkModeButton() {
+    document.getElementById('darkMode').addEventListener('click', function() {
     var mainContainer = document.getElementById('mainContainer');
     if (mainContainer.classList.contains('inverted')) {
         // Dark mode is currently enabled, so we apply the reverse animation
@@ -8,29 +10,10 @@ document.getElementById('darkMode').addEventListener('click', function() {
         mainContainer.style.animation = 'invert 1s forwards';
     }
     mainContainer.classList.toggle('inverted');
-});
-
-document.addEventListener("DOMContentLoaded", function() {
-    var animateMe = document.getElementById("invisible-animated");
-
-    window.addEventListener('scroll', function() {
-        var elementTop = animateMe.getBoundingClientRect().top;
-        var viewportHeight = window.innerHeight;
-
-        if (elementTop < viewportHeight - 100) { // 100 pixels before it reaches the top of the viewport
-            animateMe.classList.add("visible");
-        } else {
-            animateMe.classList.remove("visible");
-        }
     });
-});
-
-
-document.getElementById('mainContainer').addEventListener('animationend', function() {
-    this.style.animation = '';
-});
-
-fetch('https://api.github.com/users/affeltrucken/repos')
+}
+function getGithubRepos() {
+    fetch('https://api.github.com/users/affeltrucken/repos')
     .then(response => response.json())
     .then(data => {
     const container = document.getElementById('repo-container'); // Ensure this ID matches your container's ID in HTML
@@ -48,6 +31,8 @@ fetch('https://api.github.com/users/affeltrucken/repos')
         titleLink.href = repo.html_url;
         titleLink.textContent = repo.name;
         titleLink.classList.add('repo-title');
+        titleLink.classList.add('small');
+        titleLink.classList.add('bold');
         contentDiv.appendChild(titleLink);
 
         // Check if the repository has a description
@@ -65,5 +50,23 @@ fetch('https://api.github.com/users/affeltrucken/repos')
     });
     })
     .catch(error => console.error('Error:', error));
+}
 
-    
+function getGithubBio() {
+    fetch('https://api.github.com/users/affeltrucken')
+    .then(response => response.json())
+    .then(data => {
+      var githubDescription = document.getElementById("github-profile-description")
+      githubDescription.textContent = data.bio
+    })
+    .catch(error => console.error('Error fetching GitHub profile:', error));
+}
+
+function main(){
+    darkModeButton()
+    getGithubBio()
+    getGithubRepos()
+
+}
+
+main()
