@@ -57,7 +57,6 @@ function getGithubRepos() {
 
 function displayRepos(data) {
   const container = document.getElementById('repo-container'); // Ensure this ID matches your container's ID in HTML
-  container.innerHTML = ''; // Clear existing content
   data.forEach(repo => {
       // Create the .repo container
       const repoDiv = document.createElement('div');
@@ -108,8 +107,8 @@ function main(){
 
         [
             darkModeButton(),
-            getGithubBio(),
-            getGithubRepos()
+            getGithubRepos(),
+            getGithubBio()
             
         ]
     ).then(() => {
