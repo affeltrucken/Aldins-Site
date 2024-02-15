@@ -17,14 +17,15 @@ main {
 header {
     top: 0;
     width: 100%;
-    margin-bottom: 2rem;
+    margin-top: 3.5rem;
+    margin-bottom: 3.5rem;
     transition: ease all .3s;
 }
 
 nav {
   text-align: center;
   width: auto;
-  padding-right: 1.5rem;
+  padding-right: 4rem;
 }
 
 a {
@@ -39,11 +40,11 @@ svg {
 }
 
 .spacer {
-  padding: 3rem;
+  padding: 2rem;
 }
 
 .big {
-  font-size: 5rem;
+  font-size: 4rem;
   transition: ease all .3s;
 }
 
@@ -100,30 +101,23 @@ svg {
 }
 
 .bold {
-  font-weight: 700;
+  font-weight: 650;
+  transition: ease all .3s;
+}
+
+.semibold {
+  font-weight: 500;
   transition: ease all .3s;
 }
 
 .thin {
-  font-weight: 500;
+  font-weight: 300;
+  transition: ease all .3s;
 }
 
 .accent {
   color: rgb(0, 127, 207)
 }
-
-/**
-.gallery {
-  display: flex;
-  width: auto;
-}
-
-.gallery img {
-  margin: 0.3rem;
-  flex: 1;
-  width: 100%;
-  height: auto;
-}**/
 
 .inverted {
   animation: invert 1s forwards;
@@ -172,8 +166,10 @@ svg {
 
 .icon-small {
   width: 1.5rem;
-  padding-bottom: 0.5rem;
+  padding-bottom: auto;
+  padding-right: auto;
   padding-right: 0.5rem;
+  transition: ease all .3s;
 }
 
 #info {
@@ -195,6 +191,18 @@ svg {
   background-color: #fafafa
 }
 
+#last-nav {
+  padding-right: 0;
+}
+
+#settings {
+  position: absolute;
+  top: 0
+}
+
+#name-title {
+  margin-bottom: 1.5rem;
+}
 
 @keyframes invert {
   from {filter: invert(0%)}
@@ -213,26 +221,30 @@ svg {
 
 @media (max-width: 1000px) {
   .repo {
-    width: calc(50% - 10px);
-    transition: ease all .3s;
+    width: calc(50% - 2rem);
   }
   .small {
     font-size: 1.5rem;
-    transition: ease all .3s;
   }
   .medium {
     font-size: 2.5rem;
-    transition: ease all .3s;
   }
   .big {
     font-size: 3.5rem;
-    transition: ease all .3s;
+  }
+  .icon-small {
+    width: 1.2rem;
+    padding-right: 0.3rem;
+  }
+  .navigation {
+    font-size: 2rem;
   }
 }
 
 @media (max-width: 1200px){
   main {
     margin-left: 15%;
+    margin-right: 15%;
   }
 }
 

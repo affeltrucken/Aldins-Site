@@ -3,7 +3,7 @@
   function addScrollFadeInAnimation() {
     const observer = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting && entry.intersectionRatio > 0) {
+        if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
           // Element is now intersecting, proceed with animation or visibility change
           entry.target.classList.add('fade-in');
         } else {
@@ -51,7 +51,7 @@ function getGithubRepos() {
         titleLink.textContent = repo.name;
         titleLink.classList.add('repo-title');
         titleLink.classList.add('small');
-        titleLink.classList.add('bold');
+        titleLink.classList.add('semibold');
         contentDiv.appendChild(titleLink);
 
         // Check if the repository has a description
@@ -60,6 +60,7 @@ function getGithubRepos() {
             const descriptionPara = document.createElement('p');
             descriptionPara.textContent = repo.description;
             descriptionPara.classList.add('repo-description'); // Add a class for styling
+            descriptionPara.classList.add('thin'); // Add a class for styling
             contentDiv.appendChild(descriptionPara);
         }
 

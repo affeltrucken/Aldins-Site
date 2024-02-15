@@ -9,34 +9,36 @@
     <title>Aldin Smajlovic</title>
 </head>
 <body>
-    <img src="moon.svg" id="darkMode">
-    <span id="info">?</span>
+    <div id="settings">
+        <img src="moon.svg" id="darkMode">
+        <span id="info">?</span>
+    </div>
     <main>
         <header>
             <nav class="inline-block">
-                <a class="small bold" href="/">Home</a>
+                <a class="small bold navigation" href="/">Home</a>
             </nav>
             <nav class="inline-block">
-                <a class="small bold" href="/portfolio.html">Portfolio</a>
+                <a class="small bold navigation" href="/portfolio.html">Portfolio</a>
             </nav>
-            <nav class="inline-block">
-                <a class="small bold" href="/contact.html">Contact</a>
+            <nav class="inline-block" id="last-nav" >
+                <a class="small bold navigation" href="/contact.html">Contact</a>
             </nav>
         </header>
-        <div class="big bold">Aldin Smajlovic</div>
+        <div class="big bold" id="name-title">Aldin Smajlovic</div>
         <div class="accent medium bold"> 
-            <span class="delay-1 fade-in inline-block">Tech enthusiast, </span>
-            <span class="delay-2 fade-in inline-block">hobby photographer,</span>
-            <span class="delay-3 fade-in inline-block">and programmer</span>
+            <span class="delay-1 fade-in inline-block bold">Tech enthusiast, </span>
+            <span class="delay-2 fade-in inline-block bold">hobby photographer,</span>
+            <span class="delay-3 fade-in inline-block bold">and programmer</span>
         </div>
         <div class="spacer"></div>
-        <div class="delay-4 fade-in medium bold">
-            Scroll to see my work.
+        <div class="delay-4 fade-in medium semibold">
+            Scroll to see my work
         </div>
         <div class="spacer"></div>
         <div class="spacer"></div>
         <div id="repo-container" class="hidden">
-            <div class="repo bold accent small"> <img class="icon-small" src="media/github.png"><a class="accent repo-title" href="https://github.com/affeltrucken">Affeltrucken</a><div class="repo-description thin" id="github-profile-description"></div></div>
+            <div class="repo bold accent small"> <a class="accent repo-title" href="https://github.com/affeltrucken"><img class="icon-small" src="media/github.png">Affeltrucken</a><div class="repo-description thin" id="github-profile-description"></div></div>
         </div>
         
 
