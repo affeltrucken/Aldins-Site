@@ -247,9 +247,22 @@ svg {
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 550px) {
+  .small {
+    font-size: 1rem;
+  }
+  .medium {
+    font-size: 2rem;
+  }
+  .big {
+    font-size: 3rem;
+  }
+  .icon-small {
+    width: 1rem;
+    padding-right: 0.2rem;
+  }
   .navigation-text {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     padding-right: 0;
   }
 }
