@@ -3,7 +3,7 @@
   function addScrollFadeInAnimation() {
     const observer = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
+        if (entry.isIntersecting && entry.intersectionRatio > 0.6) {
           // Element is now intersecting, proceed with animation or visibility change
           entry.target.classList.add('fade-in');
         } else {
@@ -11,26 +11,13 @@
           // This could involve resetting elements to a default state if they become non-intersecting after being intersecting
         }
       });
-    }, { threshold: 1.0 }); // Adjust threshold as needed
+    }, { threshold: 0.6 }); // Adjust threshold as needed
   
     document.querySelectorAll('.hidden').forEach(el => {
       observer.observe(el);
     });
   }
 
-function darkModeButton() {
-    document.getElementById('darkMode').addEventListener('click', function() {
-    var mainContainer = document.getElementById('mainContainer');
-    if (mainContainer.classList.contains('inverted')) {
-        // Dark mode is currently enabled, so we apply the reverse animation
-        mainContainer.style.animation = 'reverse-invert 1s forwards';
-    } else {
-        // Dark mode is not enabled, apply the normal animation
-        mainContainer.style.animation = 'invert 1s forwards';
-    }
-    mainContainer.classList.toggle('inverted');
-    });
-}
 function getGithubRepos() {
   // Check if cached data exists and is still valid
   const cachedRepos = localStorage.getItem('githubRepos');
@@ -106,7 +93,6 @@ function main(){
     Promise.all(
 
         [
-            darkModeButton(),
             getGithubRepos(),
             getGithubBio()
             

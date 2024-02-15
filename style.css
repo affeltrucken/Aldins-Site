@@ -147,6 +147,11 @@ svg {
   margin-top: 5px;
 }
 
+.spacer-width-dependent {
+  padding: 2rem;
+  transition: ease all .3s;
+}
+
 .content {
   width: 100%;
 }
@@ -249,9 +254,12 @@ svg {
     justify-content: space-between;
     align-items: center;
   }
+  .spacer-width-dependent {
+    padding: 0;
+  }
 }
 
-@media (max-width: 550px) {
+@media (max-width: 600px) {
   .small {
     font-size: 1rem;
   }
