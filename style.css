@@ -236,6 +236,13 @@ svg {
     width: 100%; /* Adjust for two columns */
   }
   .navigation-text {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
+    padding-right: 0;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 }
