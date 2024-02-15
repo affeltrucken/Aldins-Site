@@ -6,6 +6,10 @@
   :root { font-family: InterVariable, sans-serif; }
 }
 
+body {
+  min-width: 500px;
+}
+
 main {
   margin-left: 20%;
   margin-right: 20%;
