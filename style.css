@@ -23,7 +23,6 @@ header {
 nav {
   text-align: center;
   width: auto;
-  padding-right: 4rem;
 }
 
 a {
@@ -170,6 +169,10 @@ svg {
   transition: ease all .3s;
 }
 
+.navigation-text {
+  padding-right: 4rem;
+}
+
 #info {
   font-weight: 800;
   font-size: 2.5rem
@@ -217,6 +220,14 @@ svg {
   to { filter: invert(0%); }
 }
 
+
+@media (max-width: 1200px){
+  main {
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+}
+
 @media (max-width: 1000px) {
   .repo {
     width: calc(50% - 2rem);
@@ -234,20 +245,22 @@ svg {
     width: 1.2rem;
     padding-right: 0.3rem;
   }
-  .navigation {
+  .navigation-text {
     font-size: 2rem;
   }
 }
 
-@media (max-width: 1200px){
-  main {
-    margin-left: 15%;
-    margin-right: 15%;
+@media (max-width: 800px) {
+  .navigation-text {
+    padding-right: 2rem;
   }
 }
 
 @media (max-width: 650px) {
   .repo {
     width: 100%; /* Adjust for two columns */
+  }
+  .navigation-text {
+    font-size: 1.5rem;
   }
 }

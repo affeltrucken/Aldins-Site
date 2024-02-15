@@ -32,45 +32,66 @@ function darkModeButton() {
     });
 }
 function getGithubRepos() {
-    fetch('https://api.github.com/users/affeltrucken/repos')
-    .then(response => response.json())
-    .then(data => {
-    const container = document.getElementById('repo-container'); // Ensure this ID matches your container's ID in HTML
-    data.forEach(repo => {
-        // Create the .repo container
-        const repoDiv = document.createElement('div');
-        repoDiv.classList.add('repo');
-
-        // Create the .content wrapper
-        const contentDiv = document.createElement('div');
-        contentDiv.classList.add('content');
-
-        // Create and append the repository title (link)
-        const titleLink = document.createElement('a');
-        titleLink.href = repo.html_url;
-        titleLink.textContent = repo.name;
-        titleLink.classList.add('repo-title');
-        titleLink.classList.add('small');
-        titleLink.classList.add('semibold');
-        contentDiv.appendChild(titleLink);
-
-        // Check if the repository has a description
-        if (repo.description) {
-            // Create and append the description paragraph
-            const descriptionPara = document.createElement('p');
-            descriptionPara.textContent = repo.description;
-            descriptionPara.classList.add('repo-description'); // Add a class for styling
-            descriptionPara.classList.add('thin'); // Add a class for styling
-            contentDiv.appendChild(descriptionPara);
-        }
-
-        // Append the .content wrapper to the .repo container, then append it to the main container
-        repoDiv.appendChild(contentDiv);
-        container.appendChild(repoDiv);
-    });
-    })
-    .catch(error => console.error('Error:', error));
+  // Check if cached data exists and is still valid
+  const cachedRepos = localStorage.getItem('githubRepos');
+  const lastFetchTime = localStorage.getItem('lastFetchTime');
+  const currentTime = new Date().getTime();
+  
+  if (cachedRepos && lastFetchTime && (currentTime - lastFetchTime) < 86400000) { // 86400000 ms = 24 hours
+      // Use cached data
+      const data = JSON.parse(cachedRepos);
+      displayRepos(data);
+  } else {
+      // Fetch new data
+      fetch('https://api.github.com/users/affeltrucken/repos')
+      .then(response => response.json())
+      .then(data => {
+          // Cache the data along with the current timestamp
+          localStorage.setItem('githubRepos', JSON.stringify(data));
+          localStorage.setItem('lastFetchTime', currentTime.toString());
+          displayRepos(data);
+      })
+      .catch(error => console.error('Error:', error));
+  }
 }
+
+function displayRepos(data) {
+  const container = document.getElementById('repo-container'); // Ensure this ID matches your container's ID in HTML
+  container.innerHTML = ''; // Clear existing content
+  data.forEach(repo => {
+      // Create the .repo container
+      const repoDiv = document.createElement('div');
+      repoDiv.classList.add('repo');
+
+      // Create the .content wrapper
+      const contentDiv = document.createElement('div');
+      contentDiv.classList.add('content');
+
+      // Create and append the repository title (link)
+      const titleLink = document.createElement('a');
+      titleLink.href = repo.html_url;
+      titleLink.textContent = repo.name;
+      titleLink.classList.add('repo-title');
+      titleLink.classList.add('small');
+      titleLink.classList.add('semibold');
+      contentDiv.appendChild(titleLink);
+
+      // Check if the repository has a description
+      if (repo.description) {
+          // Create and append the description paragraph
+          const descriptionPara = document.createElement('p');
+          descriptionPara.textContent = repo.description;
+          descriptionPara.classList.add('repo-description'); // Add a class for styling
+          descriptionPara.classList.add('thin'); // Add a class for styling
+          contentDiv.appendChild(descriptionPara);
+      }
+
+      // Append the .content wrapper to the .repo container, then append it to the main container
+      repoDiv.appendChild(contentDiv);
+      container.appendChild(repoDiv);
+  });
+}
+
 
 function getGithubBio() {
     fetch('https://api.github.com/users/affeltrucken')
