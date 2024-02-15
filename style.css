@@ -8,13 +8,15 @@
 
 main {
   margin-left: 25%;
-  margin-right: 25%
+  margin-right: 25%;
+  transition: ease all .5s;
 }
 
 header {
     top: 0;
     width: 100%;
     margin-bottom: 2rem;
+    transition: ease all .5s;
 }
 
 nav {
@@ -40,18 +42,22 @@ svg {
 
 .big {
   font-size: 5rem;
+  transition: ease all .5s;
 }
 
 .medium {
-  font-size: 3rem
+  font-size: 3rem;
+  transition: ease all .5s;
 }
 
 .small {
   font-size: 2rem;
+  transition: ease all .5s;
 }
 
 .smallest {
   font-size: 1rem;
+  transition: ease all .5s;
 }
 
 .hidden {
@@ -93,6 +99,7 @@ svg {
 
 .bold {
   font-weight: 700;
+  transition: ease all .5s;
 }
 
 .thin {
@@ -204,16 +211,26 @@ svg {
 
 @media (max-width: 1000px) {
   .repo {
-    width: calc(50% - 10px); /* Adjust for two columns */
+    width: calc(50% - 10px);
+    transition: ease all .5s;
   }
   .small {
     font-size: 1.5rem;
+    transition: ease all .5s;
   }
   .medium {
-    font-size: 2.5rem
+    font-size: 2.5rem;
+    transition: ease all .5s;
   }
   .big {
     font-size: 3.5rem;
+    transition: ease all .5s;
+  }
+}
+
+@media (max-width: 1200px){
+  main {
+    margin-left: 15%;
   }
 }
 
