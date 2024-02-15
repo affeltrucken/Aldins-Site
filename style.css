@@ -246,3 +246,10 @@ svg {
     align-items: center;
   }
 }
+
+@media (max-width: 500px) {
+  .navigation-text {
+    font-size: 1.3rem;
+    padding-right: 0;
+  }
+}
