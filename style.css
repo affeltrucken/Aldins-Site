@@ -6,13 +6,6 @@
   :root { font-family: InterVariable, sans-serif; }
 }
 
-@media (max-width: 724px) {
-  .repo {
-    width: calc(50% - 10px); /* Adjust the width to fit two items in a row */
-    /* Keep the rest of your styles the same */
-  }
-}
-
 main {
   margin-left: 25%;
   margin-right: 25%
@@ -134,7 +127,6 @@ svg {
 }
 
 .inverted .accent {
-  filter: invert(100%);
   animation: invert 1s forwards;
 }
 
@@ -142,19 +134,16 @@ svg {
   width: calc(33% - 2rem);
   
   margin-bottom: 10px;
-  
   padding-bottom: 1rem;
   padding-top: 1rem;
-
   border-radius: 2rem;
 }
 
 .repo-title {
   background: none;
-  display: block;
-  color:rgb(0, 0, 0);
+  display: inline-block;
 
-  padding-bottom: 1rem;
+  padding-bottom: rem;
 
   white-space: nowrap;
   overflow: hidden;
@@ -166,11 +155,6 @@ svg {
   font-size: 1rem;
   color: #434343;
   margin-top: 5px;
-
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 100%;
 }
 
 .content {
@@ -178,8 +162,9 @@ svg {
 }
 
 .icon-small {
-  display: inline-block;
   width: 1.5rem;
+  padding-bottom: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 #info {
@@ -215,4 +200,25 @@ svg {
 @keyframes reverse-invert {
   from { filter: invert(100%); }
   to { filter: invert(0%); }
+}
+
+@media (max-width: 1000px) {
+  .repo {
+    width: calc(50% - 10px); /* Adjust for two columns */
+  }
+  .small {
+    font-size: 1.5rem;
+  }
+  .medium {
+    font-size: 2.5rem
+  }
+  .big {
+    font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 650px) {
+  .repo {
+    width: 100%; /* Adjust for two columns */
+  }
 }
