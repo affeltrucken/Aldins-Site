@@ -1,23 +1,30 @@
 
   
-  function addScrollFadeInAnimation() {
-    const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting && entry.intersectionRatio > 0.6) {
-          // Element is now intersecting, proceed with animation or visibility change
-          entry.target.classList.add('fade-in');
-        } else {
-          // Optionally, handle the case when element is not intersecting or intersectionRatio is not as desired
-          // This could involve resetting elements to a default state if they become non-intersecting after being intersecting
-        }
-      });
-    }, { threshold: 0.6 }); // Adjust threshold as needed
-  
-    document.querySelectorAll('.hidden').forEach(el => {
-      observer.observe(el);
+function addScrollFadeInAnimation() {
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      console.log(entry.intersectionRatio)
+      if (entry.isIntersecting && entry.intersectionRatio > calculateThreshold()) {
+        // Element is now intersecting, proceed with animation or visibility change
+        entry.target.classList.add('fade-in');
+      }
     });
-  }
+  }, { threshold: calculateThreshold() }); // Initial threshold based on viewport width
 
+  document.querySelectorAll('.hidden').forEach(el => {
+    observer.observe(el);
+  });
+
+  // Function to calculate threshold based on viewport width
+  function calculateThreshold() {
+    if (window.innerWidth < 800){
+      return 0.4;
+    }
+
+
+    return 0.6;
+  }
+}
 function getGithubRepos() {
   // Check if cached data exists and is still valid
   const cachedRepos = localStorage.getItem('githubRepos');

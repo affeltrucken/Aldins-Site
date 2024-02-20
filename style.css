@@ -77,7 +77,7 @@ svg {
 
 
 .delay-1 {
-  animation-delay: 0s
+  animation-delay: 0.5s
 }
 
 .delay-2 {
@@ -85,12 +85,9 @@ svg {
 }
 
 .delay-3 {
-  animation-delay: 2s
+  animation-delay: 1.5s
 }
 
-.delay-4 {
-  animation-delay: 3s;
-}
 
 .inline-block {
   display: inline-block;
@@ -155,7 +152,6 @@ svg {
 .icon-small {
   width: 1.5rem;
   padding-bottom: auto;
-  padding-right: auto;
   padding-right: 0.5rem;
   transition: ease all .3s;
 }
@@ -194,6 +190,15 @@ svg {
 
 #name-title {
   margin-bottom: 1.5rem;
+}
+
+#under-development-info {
+  position: fixed;
+  top: auto;
+  bottom: 1rem;
+  left: 1rem;
+  width: 12rem;
+  z-index: 9999;
 }
 
 @keyframes fade-in {
