@@ -106,22 +106,11 @@ function getGithubBio() {
 }
 
 function main(){
-    Promise.all(
-
-        [
-            getGithubRepos(),
-            getGithubBio()
-            
-        ]
-    ).then(() => {
-        document.querySelectorAll('.hidden').forEach(el => {
-            // Initialize elements as if they are not intersecting
-            // This can be through CSS or directly here if needed
-            // For example, setting opacity to 0 through JavaScript: el.style.opacity = '0';
-          });
-    addScrollFadeInAnimation()
-})
+    getGithubRepos(),
+    getGithubBio()
+    //addScrollFadeInAnimation()
 }
+
 
 main()
 
