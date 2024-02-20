@@ -22,7 +22,7 @@ function addScrollFadeInAnimation() {
     }
 
 
-    return 0.8;
+    return 0.9;
   }
 }
 function getGithubRepos() {
