@@ -18,11 +18,11 @@ function addScrollFadeInAnimation() {
   // Function to calculate threshold based on viewport width
   function calculateThreshold() {
     if (window.innerWidth < 800){
-      return 0.4;
+      return 0.6;
     }
 
 
-    return 0.6;
+    return 0.8;
   }
 }
 function getGithubRepos() {
@@ -51,15 +51,22 @@ function getGithubRepos() {
 
 function displayRepos(data) {
   const container = document.getElementById('repo-container'); // Ensure this ID matches your container's ID in HTML
+  const numberOfReposToShow = 5; // Change this to the desired number of repos to display
+  let reposDisplayed = 0;
+  
   data.forEach(repo => {
+      if (reposDisplayed >= numberOfReposToShow) {
+          return; // Stop iterating if the desired number of repos is reached
+      }
+  
       // Create the .repo container
       const repoDiv = document.createElement('div');
       repoDiv.classList.add('repo');
-
+  
       // Create the .content wrapper
       const contentDiv = document.createElement('div');
       contentDiv.classList.add('content');
-
+  
       // Create and append the repository title (link)
       const titleLink = document.createElement('a');
       titleLink.href = repo.html_url;
@@ -68,7 +75,7 @@ function displayRepos(data) {
       titleLink.classList.add('small');
       titleLink.classList.add('semibold');
       contentDiv.appendChild(titleLink);
-
+  
       // Check if the repository has a description
       if (repo.description) {
           // Create and append the description paragraph
@@ -78,10 +85,12 @@ function displayRepos(data) {
           descriptionPara.classList.add('thin'); // Add a class for styling
           contentDiv.appendChild(descriptionPara);
       }
-
+  
       // Append the .content wrapper to the .repo container, then append it to the main container
       repoDiv.appendChild(contentDiv);
       container.appendChild(repoDiv);
+  
+      reposDisplayed++;
   });
 }
 
