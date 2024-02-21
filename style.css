@@ -32,6 +32,10 @@ header {
     transition: ease all .3s;
 }
 
+img {
+  height: 300px;
+}
+
 nav {
   text-align: center;
   width: auto;
@@ -127,7 +131,7 @@ svg {
 }
 
 .accent {
-  color: #519cff;
+  color: #64a7ff;
   transition: ease all .3s;
 }
 
