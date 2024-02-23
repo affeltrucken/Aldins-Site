@@ -131,7 +131,7 @@ svg {
 }
 
 .accent {
-  color: #64a7ff;
+  color: rgb(87, 165, 255);
   transition: ease all .3s;
 }
 
