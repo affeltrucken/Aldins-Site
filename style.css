@@ -18,8 +18,8 @@ main {
 
 body {
   min-width: 380px;
-  background-color: rgb(0, 0, 0);
-  color: white;
+  background-color: rgb(255, 255, 255);
+  color: black;
 }
 
 header {
@@ -40,7 +40,7 @@ nav {
 }
 
 a {
-  color: white;
+  color: rgb(0, 0, 0);
   text-decoration: none;
 }
 
@@ -129,7 +129,7 @@ svg {
 }
 
 .accent {
-  color: rgb(255, 152, 152);
+  color: #ff4a4a;
   transition: ease all .3s;
 }
 
