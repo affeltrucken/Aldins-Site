@@ -115,6 +115,10 @@ svg {
   animation-delay: 1.5s
 }
 
+.delay-4 {
+  animation-delay: 2s
+}
+
 .inline-block {
   display: inline-block;
 
@@ -148,8 +152,6 @@ svg {
 .repo {
   width: calc(33% - 2rem);
   
-  margin-bottom: 10px;
-  padding-bottom: 1rem;
   padding-top: 1rem;
   border-radius: 2rem;
 }
@@ -214,8 +216,6 @@ svg {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding-left: 1rem;
-  padding-right: 1rem;
 }
 
 #last-nav {
