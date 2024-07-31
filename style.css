@@ -75,12 +75,16 @@ svg {
   font-size: 3rem;
 }
 
+.justify-text {
+  text-align: justify;
+}
+
 .small {
   font-size: 2rem;
 }
 
 .smallest {
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 
 .hidden {
@@ -91,6 +95,11 @@ svg {
 .fade-in {
   animation: fade-in 1.3s;
   animation-fill-mode: both;
+}
+
+.paragraph {
+  line-height: 1.5;
+  white-space: pre-line;
 }
 
 
@@ -105,7 +114,6 @@ svg {
 .delay-3 {
   animation-delay: 1.5s
 }
-
 
 .inline-block {
   display: inline-block;
@@ -133,6 +141,10 @@ svg {
   transition: ease all .3s;
 }
 
+.invert {
+  filter: invert(100%);
+}
+
 .repo {
   width: calc(33% - 2rem);
   
@@ -146,18 +158,18 @@ svg {
   background: none;
   display: inline-block;
 
-  padding-bottom: rem;
-
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 100%;
+  max-width: 10 0%;
+  width: 100%
 }
 
 .repo-description {
   font-size: 1rem;
   color: #808080;
-  margin-top: 5px;
+  margin-top: 0;
+  padding-bottom: 0;
 }
 
 .spacer-width-dependent {
@@ -179,6 +191,7 @@ svg {
 
 .icon-small {
   width: 1.5rem;
+  height: auto;
   padding-bottom: auto;
   padding-right: 0.5rem;
   transition: ease all .3s;
@@ -198,16 +211,11 @@ svg {
 }
 
 #repo-container {
-  padding-left: 2rem;
-  padding-right: 2rem;
-  padding-top: 0.8rem;
-
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  background-color: #ffffff;
-
-  display: none;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 #last-nav {
@@ -223,9 +231,12 @@ svg {
   margin-bottom: 1.5rem;
 }
 
+
+
 #under-development-info {
   position: fixed;
   top: auto;
+  
   bottom: 1rem;
   left: 1rem;
   width: 12rem;
@@ -247,6 +258,9 @@ svg {
 @media (max-width: 1100px) {
   .repo {
     width: calc(50% - 2rem);
+  }
+  .smallest {
+    font-size: 1rem;
   }
   .small {
     font-size: 1.5rem;

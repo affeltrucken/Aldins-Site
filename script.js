@@ -31,7 +31,7 @@ function getGithubRepos() {
   const lastFetchTime = localStorage.getItem('lastFetchTime');
   const currentTime = new Date().getTime();
   
-  if (cachedRepos && lastFetchTime && (currentTime - lastFetchTime) < 86400000) { // 86400000 ms = 24 hours
+  if (cachedRepos && lastFetchTime && (currentTime - lastFetchTime) < 3600000) { // 86400000 ms = 24 hours
       // Use cached data
       const data = JSON.parse(cachedRepos);
       displayRepos(data);
