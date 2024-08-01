@@ -302,26 +302,13 @@ svg {
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 400) {
   .repo {
     width: 100%;
   }
-  .navigation-text {
-    font-size: 1.75rem;
-    padding-right: 0;
-  }
-
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .spacer-width-dependent {
-    padding: 0;
-  }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 650px) {
   .small {
     font-size: 1rem;
   }
@@ -338,6 +325,15 @@ svg {
   .navigation-text {
     font-size: 1.5rem;
     padding-right: 0;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .spacer-width-dependent {
+    padding: 0;
   }
 }
 
